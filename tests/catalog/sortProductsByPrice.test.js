@@ -8,7 +8,7 @@ describe('sortProductsByPrice', () => {
   });
 
   test('все товары без направления сортируются как [3, 6, 5, 4, 2, 1]', () => {
-    const sort = sortProductsByPrice(products, '');
+    const sort = sortProductsByPrice(products);
     expect(sort.map(p => p.id)).toEqual([3, 6, 5, 4, 2, 1]);
   });
 
@@ -51,7 +51,7 @@ describe('sortProductsByPrice', () => {
 
   test('направление по умолчанию не меняет исходный массив всех товаров', () => {
     const before = products.map(p => p.id);
-    sortProductsByPrice(products, '');
+    sortProductsByPrice(products);
     expect(products.map(p => p.id)).toEqual(before);
   });
 });
